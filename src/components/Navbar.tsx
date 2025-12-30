@@ -18,18 +18,16 @@ const Navbar = () => {
           session ? (
             <>
               <span className="mr-4">Welcome , {user?.username || user?.email}</span>
-              <Link href="/sign-in">
-                <Button
-                  // onClick={() => signOut(
-                  //   {
-                  //     callbackUrl: "/sign-in",
-                  //     redirect: true,
-                  //   }
-                  // )}
-                  className="w-full md:w-auto bg-slate-100 text-black" >
-                  Logout
-                </Button>
-              </Link>
+              <Button
+                onClick={() => signOut(
+                  {
+                    callbackUrl: `${process.env.NEXT_PUBLIC_APP_URL}/sign-in`,
+                    redirect: true,
+                  }
+                )}
+                className="w-full md:w-auto bg-slate-100 text-black" >
+                Logout
+              </Button>
             </>
           ) : (
             <Link href='/sign-in'>
