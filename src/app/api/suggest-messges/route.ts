@@ -62,3 +62,16 @@
 //     }
 //   }
 // }
+
+import { NextResponse } from "next/server";
+
+export async function GET() {
+  return NextResponse.json({
+    success: true,
+    messages: [
+      "You can do this 💪",
+      "Keep going 🚀",
+      "You're learning fast 🔥",
+    ],
+  });
+}
